@@ -122,18 +122,19 @@ export default function Home() {
           Explora películas y guarda tu historial
         </p>
 
-        <div className="mx-auto mb-10 flex max-w-2xl gap-3">
+        {/* Aquí: columna en móvil con botón arriba, fila en pantallas >= sm */}
+        <div className="mx-auto mb-10 flex flex-col-reverse sm:flex-row max-w-2xl gap-3">
           <input
             type="text"
             placeholder="🔎 Buscar película..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && buscarPeliculas()}
-            className="flex-1 rounded-xl border border-gray-700 bg-gray-900 px-5 py-3 text-white outline-none focus:border-blue-500"
+            className="flex-1 min-w-0 w-full rounded-xl border border-gray-700 bg-gray-900 px-5 py-3 text-white outline-none focus:border-blue-500"
           />
           <button
             onClick={buscarPeliculas}
-            className="rounded-xl bg-blue-600 px-6 py-3 font-bold hover:bg-blue-700"
+            className="w-full sm:w-auto rounded-xl bg-blue-600 px-6 py-3 font-bold hover:bg-blue-700"
           >
             Buscar
           </button>
